@@ -1,0 +1,62 @@
+import express from "express";
+import userRoutes from "./routes/userRoutes";
+import { logger } from "./middlewares/logger";
+
+const app = express();
+app.use(logger); 
+app.use("/users", userRoutes);
+ app.listen(3000, () => {
+    console.log("Server is running on port 3000")});
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
