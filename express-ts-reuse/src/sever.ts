@@ -1,62 +1,21 @@
-import express from "express";
-import userRoutes from "./routes/uuserRoutes";
-import { logger } from "./middlewares/logger";
+import express from 'express';
+import morgan from 'morgan'; 
+
+
+import userRoutes from './routes/uuserRoutes';
+import productRoutes from './routes/productRoutes';
 
 const app = express();
-app.use(logger); 
-app.use("/users", userRoutes);
- app.listen(3000, () => {
-    console.log("Server is running on port 3000")});
- 
+const PORT = 3000;
 
 
+app.use(express.json());
 
+app.use(morgan('dev'));
 
+app.use('/users', userRoutes);
+app.use('/products', productRoutes);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT} 🚀`);
+});
