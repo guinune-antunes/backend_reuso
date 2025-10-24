@@ -1,6 +1,6 @@
-import { Resquest, Response, NextFunction } from "express";
+import { Request, Response, NextFunction } from "express";
 
-export function logger(req: Resquest, res: Response, next: NextFunction): void {
+export function logger(req: Request, res: Response, next: NextFunction): void {
     console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
     next();
 }
